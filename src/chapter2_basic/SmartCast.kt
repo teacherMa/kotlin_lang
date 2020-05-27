@@ -1,3 +1,5 @@
+package chapter2_basic
+
 /**
  * Kotlin 中，is 相当于 Java中的instanceof，并且对于使用 is 判断后，不再发生变化的对象，编译器会自动进行 as 转化。
  * */

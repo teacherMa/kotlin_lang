@@ -1,3 +1,5 @@
+package chapter2_basic
+
 fun main() {
     val helloWorld = HelloWorld(1);
     helloWorld.helloWho("MaBen");

@@ -1,3 +1,5 @@
+package chapter2_basic
+
 /**
  * Use if and when.
  * In kotlin, "if" and "when" as expression, not statement, which means they has value.
@@ -53,7 +55,10 @@ enum class Color(private val red: Int, private val green: Int, private val blue:
     // when 可以用来判断多种类型
     fun mixColor(color1: Color, color2: Color): Color {
         return when (setOf(color1, color2)) {
-            setOf(BLUE, YELLOW) -> WHITE
+            setOf(
+                BLUE,
+                YELLOW
+            ) -> WHITE
             else -> BLACK
         }
     }

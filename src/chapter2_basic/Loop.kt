@@ -1,3 +1,5 @@
+package chapter2_basic
+
 /**
  * In kotlin, while and do-while work as they are work in Java
  *
