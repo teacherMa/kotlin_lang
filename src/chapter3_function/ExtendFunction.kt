@@ -4,7 +4,7 @@ package chapter3_function
  * 扩展函数由静态类型决定，而不是运行时的动态类型。
  * 扩展函数不能被重写。
  * 扩展函数中不能访问接受者类型中的private和protect类型的方法与变量。
- * 扩展函数实际上是一种静态方法的语法糖。
+ * 扩展函数实际上是一种静态方法的语法糖，不属于类的继承结构。
  * */
 fun main() {
     println("Kotlin".lastChar())
