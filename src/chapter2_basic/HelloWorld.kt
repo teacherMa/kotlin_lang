@@ -6,9 +6,6 @@ fun main() {
     println("newAge = ${helloWorld.changeAge(2)}")
     helloWorld.helloWho("MaBen")
 
-    val me = Person("mabenteng", 23);
-    println(me.getName);
-
     println(Color.BLUE.getNumber())
 }
 
@@ -26,11 +23,4 @@ class HelloWorld(private var age: Int) {
     fun helloWho(who: String) {
         println("Hello World, $who is $age");
     }
-}
-
-class Person(private var name: String, private var age: Int) {
-    val getName: String
-        get() {
-            return name + age;
-        }
 }
