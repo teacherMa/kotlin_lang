@@ -26,9 +26,9 @@ fun String.lastChar(): Char {
  * final version.
  * */
 fun <T> Collection<T>.joinToString(
-    prefix: String = " ",
-    suffix: String = " ",
-    divider: String = " "
+        prefix: String = " ",
+        suffix: String = " ",
+        divider: String = " "
 ): String {
     val result = StringBuilder()
     result.append(prefix)
@@ -41,6 +41,8 @@ fun <T> Collection<T>.joinToString(
     result.append(suffix)
     return result.toString()
 }
+
+fun String?.isNullOrBlank(): Boolean = this == null || this.isBlank()
 
 open class View(var x: Int) {
 
