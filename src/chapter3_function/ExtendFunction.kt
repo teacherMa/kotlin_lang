@@ -8,7 +8,9 @@ package chapter3_function
  * */
 fun main() {
     println("Kotlin".lastChar())
-    println(arrayListOf(1, 2, 3, 4, 5, 6).joinToString())
+    println(arrayListOf(1, 2, 3, 4, 5, 6).joinToString(transform = { element: Int -> "Int$element" }))
+    println(arrayListOf(1, 2, 3, 4, 5, 6).joinToString { element: Int -> "Int$element" })
+    println(arrayListOf(1, 2, 3, 4, 5, 6).joinToString(transform = null))
     val view: View = Button()
     view.showOff()
 }
@@ -24,7 +26,7 @@ fun String.lastChar(): Char {
 
 /**
  * final version.
- * */
+ */
 fun <T> Collection<T>.joinToString(
         prefix: String = " ",
         suffix: String = " ",
@@ -40,6 +42,27 @@ fun <T> Collection<T>.joinToString(
     }
     result.append(suffix)
     return result.toString()
+}
+
+/**
+ * final final version
+ */
+fun <T> Collection<T>.joinToString(
+        prefix: String = " ",
+        suffix: String = " ",
+        divider: String = " ",
+        transform: ((element: T) -> String)? = { it.toString() }): String {
+    val result = StringBuilder()
+    result.append(prefix)
+    for ((index, genData) in withIndex()) {
+        result.append(transform?.invoke(genData) ?: genData.toString())
+        if (index < size - 1) {
+            result.append(divider)
+        }
+    }
+    result.append(suffix)
+    return result.toString()
+
 }
 
 fun String?.isNullOrBlank(): Boolean = this == null || this.isBlank()
