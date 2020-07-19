@@ -9,9 +9,9 @@ package chapter4_classandinterface
  * 可以有多个init块，init块与属性初始化语句按照它们在类中放置的顺序执行。
  * */
 fun main() {
-    val son = Son()
-    ASon()
-    BSon("BSon")
+//    val son = Son()
+//    ASon()
+//    BSon("BSon")
     MainInit("MainInit")
 }
 
@@ -19,7 +19,7 @@ class MainInit constructor(_name: String) {
     var hash = "First property: $_name".also(::println)
 
     init {
-        println("This is First init block")
+        println("This is First init block $_name")
     }
 
     var name = "Second property :$_name".also(::println)
@@ -58,6 +58,13 @@ class ASon : Father("ASon Father") {
 
 class BSon(str: String) : Father(str) {
 
+}
+
+data class Setting(val version: String) {
+
+    constructor() : this("") {
+
+    }
 }
 
 
