@@ -46,7 +46,7 @@ fun openOutBox(all: OutFoodBox<Food>) {
 fun testOpen() {
     openBox(FoodBox<Food>())
     // Compile error
-    openBox(FoodBox<Fruit>())
+//    openBox(FoodBox<Fruit>())
 }
 
 fun testEat() {
